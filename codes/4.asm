@@ -1,13 +1,15 @@
-MOV R0, #10H ; Memory pointer
-MOV R2, #10 ; Total numbers to be added
-CLR A ; clear the lower byte of result
-MOV 20H, A ; Clear the higher byte of result
-UP: ADD A, @R0 ; Adding the number to Acc (A = A+@R0)
-JNC SKIP
-; Check for carry flag
-INC 21H
-; Update the higher byte of result on getting carry
-SKIP: INC R0
-DJNZ R2, UP
-MOV 20H, A ; Store the lower byte of the result
+ORG 0000H
+MOV R0, #10H    ; Start address of the 10 numbers
+MOV R2, #0AH    ; Loop counter = 10 (0AH in hex)
+CLR A           ; Clear A (holds lower byte of sum)
+MOV B, A        ; Clear B (holds higher byte/carry of sum)
+UP:
+    ADD A, @ R0  ; Add number from RAM to Accumulator
+    JNC SKIP    ; Jump if there is no carry
+    INC B       ; Increment high byte if carry occurred
+SKIP:
+    INC R0      ; Point to next RAM location
+    DJNZ R2, UP ; Repeat 10 times
+MOV 20H, A      ; Store lower byte of result at 20H
+MOV 21H, B      ; Store higher byte of result at 21H
 END
