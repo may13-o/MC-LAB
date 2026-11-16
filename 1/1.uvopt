@@ -28,7 +28,7 @@
     <TargetOption>
       <CLK51>24000000</CLK51>
       <OPTTT>
-        <gFlags>1</gFlags>
+        <gFlags>0</gFlags>
         <BeepAtEnd>1</BeepAtEnd>
         <RunSim>1</RunSim>
         <RunTarget>0</RunTarget>
@@ -82,12 +82,12 @@
         <Book>
           <Number>0</Number>
           <Title>Data Sheet</Title>
-          <Path>DATASHTS\ATMEL\DOC0366.PDF</Path>
+          <Path>DATASHTS\ATMEL\AT89C51_DS.PDF</Path>
         </Book>
         <Book>
           <Number>1</Number>
           <Title>Instruction Set Manual</Title>
-          <Path>DATASHTS\ATMEL\DOC0509.PDF</Path>
+          <Path>DATASHTS\ATMEL\AT_C51ISM.PDF</Path>
         </Book>
       </Books>
       <DebugOpt>
@@ -183,12 +183,12 @@
     <File>
       <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
-      <FileType>1</FileType>
+      <FileType>2</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\1_LED_BLINK.C</PathWithFileName>
-      <FilenameWithoutPath>1_LED_BLINK.C</FilenameWithoutPath>
+      <PathWithFileName>.\1.asm</PathWithFileName>
+      <FilenameWithoutPath>1.asm</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

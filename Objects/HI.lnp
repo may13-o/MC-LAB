@@ -1,3 +1,0 @@
-".\Objects\1_LED_BLINK.obj" 
-TO ".\Objects\HI" 
-PRINT(".\Listings\HI.m51") RAMSIZE(64) 

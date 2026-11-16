@@ -13,14 +13,14 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>AT89C1051</Device>
+          <Device>AT89C51</Device>
           <Vendor>Microchip</Vendor>
-          <Cpu>IRAM(0 - 0x3F) IROM(0 - 0x3FF) CLOCK(24000000)</Cpu>
+          <Cpu>IRAM(0-0x7F) IROM(0-0xFFF) CLOCK(24000000)</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"LIB\STARTUP.A51" ("Standard 8051 Startup Code")</StartupFile>
           <FlashDriverDll></FlashDriverDll>
-          <DeviceId>2983</DeviceId>
-          <RegisterFile>REG1051.H</RegisterFile>
+          <DeviceId>2976</DeviceId>
+          <RegisterFile>REGX51.H</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -46,10 +46,10 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>HI</OutputName>
+          <OutputName>1</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -110,11 +110,11 @@
           <SimDllName>S8051.DLL</SimDllName>
           <SimDllArguments></SimDllArguments>
           <SimDlgDll>DP51.DLL</SimDlgDll>
-          <SimDlgDllArguments>-p1051</SimDlgDllArguments>
+          <SimDlgDllArguments>-p51</SimDlgDllArguments>
           <TargetDllName>S8051.DLL</TargetDllName>
           <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TP51.DLL</TargetDlgDll>
-          <TargetDlgDllArguments>-p1051</TargetDlgDllArguments>
+          <TargetDlgDllArguments>-p51</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
@@ -233,7 +233,7 @@
               <RCB>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x10000</Size>
+                <Size>0x0</Size>
               </RCB>
               <RXB>
                 <Type>0</Type>
@@ -273,12 +273,12 @@
               <IRO>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x400</Size>
+                <Size>0x1000</Size>
               </IRO>
               <IRA>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x40</Size>
+                <Size>0x80</Size>
               </IRA>
               <XRA>
                 <Type>0</Type>
@@ -377,9 +377,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>1_LED_BLINK.C</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\1_LED_BLINK.C</FilePath>
+              <FileName>1.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\1.asm</FilePath>
             </File>
           </Files>
         </Group>
