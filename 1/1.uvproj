@@ -377,9 +377,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>1.asm</FileName>
+              <FileName>2.asm</FileName>
               <FileType>2</FileType>
-              <FilePath>.\1.asm</FilePath>
+              <FilePath>.\2.asm</FilePath>
             </File>
           </Files>
         </Group>
