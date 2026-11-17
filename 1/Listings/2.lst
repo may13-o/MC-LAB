@@ -1,27 +1,23 @@
-A51 MACRO ASSEMBLER  2                                                                    11/17/2026 04:17:04 PAGE     1
+A51 MACRO ASSEMBLER  2                                                                    11/17/2026 08:37:38 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.2.7.0
-NO OBJECT MODULE REQUESTED
+OBJECT MODULE PLACED IN .\Objects\2.obj
 ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE 2.asm SET(SMALL) DEBUG PRINT(.\Listings\2.lst) OBJECT(.\Objects\2.obj) EP
 
 LOC  OBJ            LINE     SOURCE
 
-0000 7A21              1     MOV R2, #21H ; Store the higher byte of DPTR (DPH &DPL) (2100) 2100, 2101
-0002 7B57              2     MOV R3, #57H ; store the higher byte of DPTR (5700) 5700,5701,…..
-0004 7C0A              3     MOV R4, #10 ; Counter for 10 data bytes to transfer
-0006 902100            4     MOV DPTR, #2100H
-0009 E0                5     UP: MOVX A, @DPTR ; reads the ex-memory
-000A 8B83              6     MOV DPH, R3 ; Changing to destination address of DPTR (higher byte)
-000C F0                7     MOVX @DPTR, A ; transfer byte
-000D 8A83              8     MOV DPH, R2 ; Changing to source address
-000F A3                9     INC DPTR
-                      10     ; This increments the DPTR (specially the lower byte
-0010 DCF7             11     UP: DJNZ R4, UP
-*** _________________________^
-*** ERROR #A8 IN 11 (2.asm, LINE 11): ATTEMPT TO DEFINE AN ALREADY DEFINED LABEL
-                      12     END
-A51 MACRO ASSEMBLER  2                                                                    11/17/2026 04:17:04 PAGE     2
+0000                   1     ORG 0000H
+0000 7810              2     MOV R0, #10H
+0002 7920              3     MOV R1, #20H
+0004 7D0A              4     MOV R5, #0AH
+0006 E6                5     UP:MOV A, @ R0
+0007 F7                6     MOV @ R1,A
+0008 08                7     INC R0
+0009 09                8     INC R1
+000A DDFA              9     DJNZ R5,UP
+                      10     END
+A51 MACRO ASSEMBLER  2                                                                    11/17/2026 08:37:38 PAGE     2
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -29,11 +25,10 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES
 
-DPH. . . . . . . .  D ADDR   0083H   A   
-UP . . . . . . . .  C ADDR   0009H   A   
+UP . . . . . . . .  C ADDR   0006H   A   
 
 
 REGISTER BANK(S) USED: 0 
 
 
-ASSEMBLY COMPLETE.  0 WARNING(S), 1 ERROR(S)
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
